@@ -3,7 +3,7 @@
 set -e
 
 projects:(
-    "application/"
+    "application"
 )
 
 root_directory=$PWD
