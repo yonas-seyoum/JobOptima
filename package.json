@@ -1,5 +1,5 @@
 {
-    "name": "Yonas",
+    "name": "yonas",
     "workspaces": [
         "application/*"
     ],
