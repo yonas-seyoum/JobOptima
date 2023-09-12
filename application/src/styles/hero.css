@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap');
+
+#logo{
+    position: absolute;
+    left: 5em;
+    top: 3em;
+    width: 6em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    outline: 1px solid white ;
+    overflow: hidden;
+}
+
+#hero{
+    position: absolute;
+    left: 2.5em;
+    top: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 200px;
+    color: white;
+    font-weight: bold;
+    font-size: 52px;
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+}
+
+#walk{
+    position: absolute;
+    right: 10em;
+    top: 8em;
+    width: 420px;
+    height: 420px;
+    background: url("../pages/U.png");
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+    /* outline: 1px solid red; */
+}
+
+@media screen and (max-width: 768px) {
+    #hero {
+      left: 1em;
+      top: 2em;
+      width: 100%;
+      height: auto;
+      font-size: 36px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #logo {
+      width: 16%;
+      height: 5%;
+      font-size: 3vw;
+    }
+  }
