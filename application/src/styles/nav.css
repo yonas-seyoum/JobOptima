@@ -11,7 +11,7 @@
 }
 
 .bar{
-	/* position: fixed; */
+	position: fixed;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
