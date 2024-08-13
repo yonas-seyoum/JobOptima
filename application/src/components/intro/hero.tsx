@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <div className="hero-container">
       <div className="hero-logo">
-        <div >
+        <div>
           <img src={logo} />
         </div>
         {isMobile && <HamburgerMenu />}
@@ -20,29 +20,31 @@ export default function Hero() {
         <h2 className="hero-subtitle">
           Connecting talent with opportunity - Start your journey with us.
         </h2>
-        <div className="hero-search">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Job title, skills, or company"
-          />
-          <input
-            type="text"
-            className="location-input"
-            placeholder="Location"
-          />
-          <button className="search-button">Search</button>
-        </div>
-        {!isMobile && (
-          <div className="hero-buttons">
-            <button className="cta-primary">Find Jobs</button>
-            <button className="cta-secondary">Post a Job</button>
+        <div className="box">
+          <div className="hero-search">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Job title, skills, or company"
+            />
+            <input
+              type="text"
+              className="location-input"
+              placeholder="Location"
+            />
+            <button className="search-button">Search</button>
           </div>
-        )}
-        <p className="supporting-text">
-          Over 10,000 jobs listed every day. Join now to discover your next
-          opportunity!
-        </p>
+          {!isMobile && (
+            <div className="hero-buttons">
+              <button className="cta-primary">Find Jobs</button>
+              <button className="cta-secondary">Post a Job</button>
+            </div>
+          )}
+          <p className="supporting-text">
+            Over 10,000 jobs listed every day. Join now to discover your next
+            opportunity!
+          </p>
+        </div>
       </div>
     </div>
   );
