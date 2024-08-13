@@ -1,64 +1,168 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap');
-
-#logo{
-    position: absolute;
-    left: 5em;
-    top: 3em;
-    width: 6em;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    outline: 1px solid white ;
-    overflow: hidden;
+.hero-container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    rgba(0, 123, 255, 0.7),
+    rgba(0, 210, 255, 0.7)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-#hero{
-    position: absolute;
-    left: 2.5em;
-    top: 4em;
-    display: flex;
-    justify-content: center;
+.hero-logo {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-logo > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6em;
+  height: 6em;
+  padding: 1em 1.5em;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+.hero-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-input,
+.location-input {
+  padding: 15px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-button {
+  padding: 15px 30px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-button:hover {
+  background-color: #218838;
+}
+
+.hero-buttons {
+  margin-bottom: 20px;
+}
+
+.cta-primary,
+.cta-secondary {
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+.cta-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.cta-primary:hover {
+  background-color: #0056b3;
+}
+
+.cta-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-secondary:hover {
+  background-color: white;
+  color: #007bff;
+}
+
+.supporting-text {
+  font-size: 1rem;
+  margin-top: 20px;
+  color: #dcdcdc;
+}
+
+@media (min-width: 769px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-search {
+    flex-direction: row;
     align-items: center;
+  }
+
+  .hero-logo > div {
     width: 10em;
-    height: 200px;
-    color: white;
-    font-weight: bold;
-    font-size: 52px;
-    font-family: 'Nunito', sans-serif;
-    overflow: hidden;
-}
-
-#walk{
-    position: absolute;
-    right: 10em;
-    top: 8em;
-    width: 420px;
-    height: 420px;
-    background: url("../pages/U.png");
-    background-position: center;
-    background-size: contain;
-    opacity: 0.8;
-    /* outline: 1px solid red; */
-}
-
-@media screen and (max-width: 768px) {
-    #hero {
-      left: 1em;
-      top: 2em;
-      width: 100%;
-      height: auto;
-      font-size: 36px;
-    }
+    height: 10em;
+    padding: 1em 1.5em;
   }
 
-  @media screen and (max-width: 768px) {
-    #logo {
-      width: 16%;
-      height: 5%;
-      font-size: 3vw;
-    }
+  .search-input,
+  .location-input {
+    margin-bottom: 0;
+    margin-right: 10px;
   }
+
+  .search-button {
+    width: auto;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: auto;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}
