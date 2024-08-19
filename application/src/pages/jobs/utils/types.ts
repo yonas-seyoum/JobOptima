@@ -33,4 +33,5 @@ export type JobListContextType = {
   updateExperienceFilter: (experience: ExperienceLevel) => any;
   updateIndustryFilter: (industry: Industry) => any;
   updateSalaryFilter: (salary: number) => any;
+  updateJobTypeFilter: (salary: string[]) => any;
 };

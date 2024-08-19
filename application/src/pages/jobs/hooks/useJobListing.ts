@@ -7,6 +7,7 @@ export default function useJobListing() {
   const [experienceLevels, setExperienceLevels] = useState<ExperienceLevel>([]);
   const [industry, setIndustry] = useState<Industry>([]);
   const [targetSalary, setTargetSalary] = useState<number>(0);
+  const [jobTypes, setJobTypes] = useState<string[]>([]);
 
   const updateFilter = (filter: Filter) => {
     setIndustry(filter);
@@ -25,11 +26,16 @@ export default function useJobListing() {
     setTargetSalary(salary);
   }
 
+  function updateJobTypeFilter(jobType: string[]) {
+    setJobTypes(jobType);
+  }
+
   function updateJobList() {
     const updatedJobList = jobs.filter((job) => {
       const experienceMatch =
         experienceLevels.length === 0 ||
         experienceLevels.includes(job.experience);
+
       const industryMatch =
         industry.length === 0 || industry.includes(job.industry);
 
@@ -45,7 +51,10 @@ export default function useJobListing() {
         targetSalary === 0 ||
         (targetSalary > minSalary && targetSalary < maxSalary);
 
-      return experienceMatch && industryMatch && salaryMatch;
+      const jobTypeMatch =
+        jobTypes.length === 0 || jobTypes.includes(job.jobType);
+
+      return experienceMatch && industryMatch && salaryMatch && jobTypeMatch;
     });
     setJobList([...updatedJobList]);
   }
@@ -54,11 +63,12 @@ export default function useJobListing() {
     if (
       targetSalary > 0 ||
       experienceLevels.length > 0 ||
-      industry.length > 0
+      industry.length > 0 ||
+      jobTypes.length > 0
     ) {
       updateJobList();
     }
-  }, [experienceLevels, industry, targetSalary]);
+  }, [experienceLevels, industry, targetSalary, jobTypes]);
 
   return {
     jobList,
@@ -66,5 +76,6 @@ export default function useJobListing() {
     updateExperienceFilter,
     updateIndustryFilter,
     updateSalaryFilter,
+    updateJobTypeFilter,
   };
 }
