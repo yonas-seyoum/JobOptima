@@ -7,12 +7,19 @@ import {
   SliderContainer,
 } from "../styled-components/styledComponents";
 import { Slider } from "@mui/material";
+import { useJobListContext } from "../context/jobListContext.provider";
 
 export default function SalaryRange() {
   const [openSection, setOpenSection] = useState<boolean>(false);
+  const [salary, setSalary] = useState<number>();
+  const { updateSalaryFilter } = useJobListContext();
 
   const handleSection = () => {
     setOpenSection(!openSection);
+  };
+
+  const handleChange = (event: Event, newValue: number | number[]) => {
+    updateSalaryFilter(newValue as number);
   };
   return (
     <FilterSection isOpen={true}>
@@ -29,6 +36,7 @@ export default function SalaryRange() {
             step={1000}
             valueLabelDisplay="auto"
             valueLabelFormat={(value) => `$${value.toLocaleString()}`}
+            onChange={handleChange}
           />
         </SliderContainer>
       </FilterContent>

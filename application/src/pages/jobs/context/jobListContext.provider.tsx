@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, ReactNode, useContext, useEffect } from "react";
 import { JobListContextType } from "../utils/types";
 import useJobListing from "../hooks/useJobListing";
 
@@ -25,10 +19,20 @@ export default function JobListContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const { jobList, updateFilter } = useJobListing();
+  const { jobList, updateFilter, updateExperienceFilter, updateIndustryFilter, updateSalaryFilter } = useJobListing();
+
+  // useEffect(() => {}, [jobList]);
 
   return (
-    <JobListContext.Provider value={{ jobList, updateFilter }}>
+    <JobListContext.Provider
+      value={{
+        jobList,
+        updateFilter,
+        updateExperienceFilter,
+        updateIndustryFilter,
+        updateSalaryFilter,
+      }}
+    >
       {children}
     </JobListContext.Provider>
   );
