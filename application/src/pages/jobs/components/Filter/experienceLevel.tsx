@@ -6,9 +6,8 @@ import {
   DropdownHeader,
   FilterContent,
   FilterSection,
-} from "../styled-components/styledComponents";
-import { useJobListContext } from "../context/jobListContext.provider";
-
+} from "../../styled-components/styledComponents";
+import { useJobListContext } from "../../context/jobListContext.provider";
 
 export default function ExperienceLevel() {
   const [openSection, setOpenSection] = useState<boolean>(false);

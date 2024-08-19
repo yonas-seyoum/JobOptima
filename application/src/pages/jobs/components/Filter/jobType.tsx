@@ -6,19 +6,19 @@ import {
   DropdownHeader,
   FilterContent,
   FilterSection,
-  RadioGroup,
-} from "../styled-components/styledComponents";
-import { useJobListContext } from "../context/jobListContext.provider";
+} from "../../styled-components/styledComponents";
+import { useJobListContext } from "../../context/jobListContext.provider";
 
-export default function WorkType() {
+export default function JobType() {
   const [openSection, setOpenSection] = useState<boolean>(true);
-  const [workType, setWorkType] = useState<string[]>([]);
+  const [jobType, setJobType] = useState<string[]>([]);
   const [isChecked, setIsChecked] = useState<{ [key: string]: boolean }>({
-    remote: false,
-    onsite: false,
-    hybrid: false,
+    fullTime: false,
+    partTime: false,
+    contract: false,
   });
-  const { updateWorkTypeFilter } = useJobListContext();
+
+  const { updateJobTypeFilter } = useJobListContext();
 
   const handleSection = () => {
     setOpenSection(!openSection);
@@ -33,23 +33,23 @@ export default function WorkType() {
       [name]: checked,
     }));
 
-    setWorkType((prev) => {
-      const updatedWorkTypes = checked
+    setJobType((prev) => {
+      const updatedLevels = checked
         ? [...prev, value]
-        : prev.filter((type) => type !== value);
+        : prev.filter((exp) => exp !== value);
 
       setTimeout(() => {
-        updateWorkTypeFilter(updatedWorkTypes);
+        updateJobTypeFilter(updatedLevels);
       });
 
-      return updatedWorkTypes;
+      return updatedLevels;
     });
   };
 
   return (
     <FilterSection isOpen={true}>
       <DropdownHeader onClick={handleSection}>
-        Work Type
+        Job Type
         <span>{openSection ? "−" : "+"}</span>
       </DropdownHeader>
       <FilterContent isOpen={openSection}>
@@ -57,32 +57,32 @@ export default function WorkType() {
           <CheckboxLabel>
             <CheckboxInput
               type="checkbox"
-              name="remote"
-              value="Remote"
-              checked={isChecked.remote}
+              value="Full-time"
+              name="fullTime"
+              checked={isChecked.fullTime}
               onChange={handleChange}
             />
-            Remote
+            Full-Time
           </CheckboxLabel>
           <CheckboxLabel>
             <CheckboxInput
               type="checkbox"
-              name="onsite"
-              value="Onsite"
-              checked={isChecked.onsite}
+              value="Part-time"
+              name="partTime"
+              checked={isChecked.partTime}
               onChange={handleChange}
             />
-            Onsite
+            Part-Time
           </CheckboxLabel>
           <CheckboxLabel>
             <CheckboxInput
               type="checkbox"
-              name="hybrid"
-              value="Hybrid"
-              checked={isChecked.hybrid}
+              value="Contract"
+              name="contract"
+              checked={isChecked.contract}
               onChange={handleChange}
             />
-            Hybrid
+            Contract
           </CheckboxLabel>
         </CheckboxGroup>
       </FilterContent>

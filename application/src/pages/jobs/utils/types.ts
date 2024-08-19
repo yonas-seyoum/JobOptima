@@ -36,3 +36,8 @@ export type JobListContextType = {
   updateJobTypeFilter: (salary: string[]) => any;
   updateWorkTypeFilter: (workType: string[]) => any;
 };
+
+
+export type JobCardProps = {
+  data: Job;
+};

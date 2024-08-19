@@ -4,7 +4,7 @@ import {
   FilterContent,
   FilterInput,
   FilterSection,
-} from "../styled-components/styledComponents";
+} from "../../styled-components/styledComponents";
 
 export default function Location() {
   const [openSection, setOpenSection] = useState<boolean>(true);
