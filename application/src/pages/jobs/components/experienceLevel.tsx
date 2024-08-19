@@ -20,39 +20,29 @@ export default function ExperienceLevel() {
     checkBox4: false,
   });
 
-  const { updateFilter } = useJobListContext();
+  const { updateExperienceFilter } = useJobListContext();
 
   const handleSection = () => {
     setOpenSection(!openSection);
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = event.target;
+    const { name, checked, value } = event.target;
 
     setIsChecked((prevState) => ({
       ...prevState,
       [name]: checked,
     }));
 
-    if (checked) {
-      addExperienceLevel(event.target.value);
-    } else {
-      removeExperienceLevel(event.target.value);
-    }
-  };
-
-  const addExperienceLevel = (experience: string) => {
     setExperienceLevel((prev) => {
-      const updatedLevels = [...prev, experience];
-      updateFilter(updatedLevels);
+      const updatedLevels = checked
+        ? [...prev, value]
+        : prev.filter((exp) => exp !== value);
 
-      return updatedLevels;
-    });
-  };
-  const removeExperienceLevel = (experience: string) => {
-    setExperienceLevel((prev) => {
-      const updatedLevels = prev.filter((exp) => exp !== experience);
-      updateFilter(updatedLevels);
+      setTimeout(() => {
+        updateExperienceFilter(updatedLevels);
+      });
+
       return updatedLevels;
     });
   };
