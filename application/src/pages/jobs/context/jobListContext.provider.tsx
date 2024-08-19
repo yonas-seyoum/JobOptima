@@ -19,7 +19,15 @@ export default function JobListContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const { jobList, updateFilter, updateExperienceFilter, updateIndustryFilter, updateSalaryFilter, updateJobTypeFilter } = useJobListing();
+  const {
+    jobList,
+    updateFilter,
+    updateExperienceFilter,
+    updateIndustryFilter,
+    updateSalaryFilter,
+    updateJobTypeFilter,
+    updateWorkTypeFilter,
+  } = useJobListing();
 
   return (
     <JobListContext.Provider
@@ -29,7 +37,8 @@ export default function JobListContextProvider({
         updateExperienceFilter,
         updateIndustryFilter,
         updateSalaryFilter,
-        updateJobTypeFilter
+        updateJobTypeFilter,
+        updateWorkTypeFilter,
       }}
     >
       {children}

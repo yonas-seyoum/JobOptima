@@ -8,6 +8,7 @@ export default function useJobListing() {
   const [industry, setIndustry] = useState<Industry>([]);
   const [targetSalary, setTargetSalary] = useState<number>(0);
   const [jobTypes, setJobTypes] = useState<string[]>([]);
+  const [workTypes, setWorkTypes] = useState<string[]>([]);
 
   const updateFilter = (filter: Filter) => {
     setIndustry(filter);
@@ -28,6 +29,10 @@ export default function useJobListing() {
 
   function updateJobTypeFilter(jobType: string[]) {
     setJobTypes(jobType);
+  }
+
+  function updateWorkTypeFilter(workType: string[]) {
+    setWorkTypes(workType);
   }
 
   function updateJobList() {
@@ -54,7 +59,16 @@ export default function useJobListing() {
       const jobTypeMatch =
         jobTypes.length === 0 || jobTypes.includes(job.jobType);
 
-      return experienceMatch && industryMatch && salaryMatch && jobTypeMatch;
+      const workTypeMatch =
+        workTypes.length === 0 || workTypes.includes(job.workType);
+
+      return (
+        experienceMatch &&
+        industryMatch &&
+        salaryMatch &&
+        jobTypeMatch &&
+        workTypeMatch
+      );
     });
     setJobList([...updatedJobList]);
   }
@@ -64,11 +78,14 @@ export default function useJobListing() {
       targetSalary > 0 ||
       experienceLevels.length > 0 ||
       industry.length > 0 ||
-      jobTypes.length > 0
+      jobTypes.length > 0 ||
+      workTypes.length > 0
     ) {
       updateJobList();
+    } else {
+      setJobList(jobs);
     }
-  }, [experienceLevels, industry, targetSalary, jobTypes]);
+  }, [experienceLevels, industry, targetSalary, jobTypes, workTypes]);
 
   return {
     jobList,
@@ -77,5 +94,6 @@ export default function useJobListing() {
     updateIndustryFilter,
     updateSalaryFilter,
     updateJobTypeFilter,
+    updateWorkTypeFilter,
   };
 }
