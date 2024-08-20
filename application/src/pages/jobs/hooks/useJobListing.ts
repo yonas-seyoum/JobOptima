@@ -35,44 +35,6 @@ export default function useJobListing() {
     setWorkTypes(workType);
   }
 
-  function updateJobList() {
-    const updatedJobList = jobs.filter((job) => {
-      const experienceMatch =
-        experienceLevels.length === 0 ||
-        experienceLevels.includes(job.experience);
-
-      const industryMatch =
-        industry.length === 0 || industry.includes(job.industry);
-
-      const minSalary = Number(
-        job.salary.split("-")[0].replace(",", "").replace("$", "")
-      );
-
-      const maxSalary = Number(
-        job.salary.split("-")[1].replace(",", "").replace("$", "")
-      );
-
-      const salaryMatch =
-        targetSalary === 0 ||
-        (targetSalary > minSalary && targetSalary < maxSalary);
-
-      const jobTypeMatch =
-        jobTypes.length === 0 || jobTypes.includes(job.jobType);
-
-      const workTypeMatch =
-        workTypes.length === 0 || workTypes.includes(job.workType);
-
-      return (
-        experienceMatch &&
-        industryMatch &&
-        salaryMatch &&
-        jobTypeMatch &&
-        workTypeMatch
-      );
-    });
-    setJobList([...updatedJobList]);
-  }
-
   useEffect(() => {
     if (
       targetSalary > 0 ||
@@ -81,11 +43,45 @@ export default function useJobListing() {
       jobTypes.length > 0 ||
       workTypes.length > 0
     ) {
-      updateJobList();
+      const updatedJobList = jobs.filter((job) => {
+        const experienceMatch =
+          experienceLevels.length === 0 ||
+          experienceLevels.includes(job.experience);
+
+        const industryMatch =
+          industry.length === 0 || industry.includes(job.industry);
+
+        const minSalary = Number(
+          job.salary.split("-")[0].replace(",", "").replace("$", "")
+        );
+
+        const maxSalary = Number(
+          job.salary.split("-")[1].replace(",", "").replace("$", "")
+        );
+
+        const salaryMatch =
+          targetSalary === 0 ||
+          (targetSalary > minSalary && targetSalary < maxSalary);
+
+        const jobTypeMatch =
+          jobTypes.length === 0 || jobTypes.includes(job.jobType);
+
+        const workTypeMatch =
+          workTypes.length === 0 || workTypes.includes(job.workType);
+
+        return (
+          experienceMatch &&
+          industryMatch &&
+          salaryMatch &&
+          jobTypeMatch &&
+          workTypeMatch
+        );
+      });
+      setJobList([...updatedJobList]);
     } else {
       setJobList(jobs);
     }
-  }, [experienceLevels, industry, targetSalary, jobTypes, workTypes, updateJobList]);
+  }, [experienceLevels, industry, targetSalary, jobTypes, workTypes]);
 
   return {
     jobList,
