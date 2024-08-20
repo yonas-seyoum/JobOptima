@@ -1,0 +1,7 @@
+.screen{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../pages/cool-background.png");
+    overflow: hidden;
+}
