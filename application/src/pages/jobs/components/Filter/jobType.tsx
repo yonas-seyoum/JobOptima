@@ -24,6 +24,8 @@ export default function JobType() {
     setOpenSection(!openSection);
   };
 
+  console.log(jobType);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked, value } = event.target;
 
