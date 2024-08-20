@@ -7,7 +7,7 @@ export const jobs: Job[] = [
     jobType: "Full-time",
     workType: "Remote",
     industry: "Technology",
-    experience: "2+ years",
+    experience: "entry-level",
     description: {
       responsibility: "Develop and maintain web applications.",
       qualification: "Bachelor's degree in Computer Science or related field.",
