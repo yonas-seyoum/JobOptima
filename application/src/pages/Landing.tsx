@@ -11,12 +11,12 @@ export default function Landing() {
   return (
     <>
       <Intro />
-      <InfoSection />
       <JobListContextProvider>
         <JobDetailContextProvider>
           <Jobs />
         </JobDetailContextProvider>
       </JobListContextProvider>
+      <InfoSection />
       <Footer />
     </>
   );
