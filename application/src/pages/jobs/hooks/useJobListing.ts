@@ -85,7 +85,7 @@ export default function useJobListing() {
     } else {
       setJobList(jobs);
     }
-  }, [experienceLevels, industry, targetSalary, jobTypes, workTypes]);
+  }, [experienceLevels, industry, targetSalary, jobTypes, workTypes, updateJobList]);
 
   return {
     jobList,

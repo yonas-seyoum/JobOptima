@@ -1,4 +1,4 @@
-import React from "react";
+
 import "../../styles/hero.css";
 import { useMediaQuery } from "react-responsive";
 import HamburgerMenu from "./hamburgerMenu";
@@ -10,7 +10,7 @@ export default function Hero() {
     <div className="hero-container">
       <div className="hero-logo">
         <div>
-          <img src={logo} />
+          <img src={logo} alt="logo"/>
         </div>
         {isMobile && <HamburgerMenu />}
       </div>
