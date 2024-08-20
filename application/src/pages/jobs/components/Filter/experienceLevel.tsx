@@ -25,6 +25,8 @@ export default function ExperienceLevel() {
     setOpenSection(!openSection);
   };
 
+  console.log(experienceLevel);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked, value } = event.target;
 

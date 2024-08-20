@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   DropdownHeader,
   FilterContent,
-  FilterInput,
   FilterSection,
   SliderContainer,
 } from "../../styled-components/styledComponents";
@@ -11,7 +10,6 @@ import { useJobListContext } from "../../context/jobListContext.provider";
 
 export default function SalaryRange() {
   const [openSection, setOpenSection] = useState<boolean>(false);
-  const [salary, setSalary] = useState<number>();
   const { updateSalaryFilter } = useJobListContext();
 
   const handleSection = () => {

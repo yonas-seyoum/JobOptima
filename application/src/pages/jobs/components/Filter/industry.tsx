@@ -25,6 +25,8 @@ export default function Industry() {
     setOpenSection(!openSection);
   };
 
+  console.log(industry);
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;
 

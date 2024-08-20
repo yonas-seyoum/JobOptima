@@ -6,7 +6,6 @@ import {
   DropdownHeader,
   FilterContent,
   FilterSection,
-  RadioGroup,
 } from "../../styled-components/styledComponents";
 import { useJobListContext } from "../../context/jobListContext.provider";
 
@@ -23,6 +22,8 @@ export default function WorkType() {
   const handleSection = () => {
     setOpenSection(!openSection);
   };
+
+  console.log(workType);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked, value } = event.target;

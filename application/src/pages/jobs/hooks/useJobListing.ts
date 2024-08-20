@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ExperienceLevel, Filter, Industry, Job } from "../utils/types";
 import { jobs } from "../utils/job.listing";
 

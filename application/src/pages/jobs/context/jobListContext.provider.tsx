@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode, useContext, useEffect } from "react";
+import { createContext, ReactNode, useContext } from "react";
 import { JobListContextType } from "../utils/types";
 import useJobListing from "../hooks/useJobListing";
 
