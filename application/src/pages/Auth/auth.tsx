@@ -15,7 +15,7 @@ import {
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import { styles } from "./util/styles";
-import { useAuthContext } from "./Context/AuthContextProvider";
+import { useAuthContext } from "../../Context/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../components/Navigation/util/constants";
 
@@ -46,7 +46,7 @@ export default function Auth() {
   };
 
   const handleGoogleLogin = () => {
-    signInWithGoogle()
+    signInWithGoogle();
   };
 
   const handleSignUp = () => {

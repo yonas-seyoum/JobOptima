@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Job } from "../utils/types";
-import { jobs } from "../utils/job.listing";
+import { Job } from "../pages/jobs/utils/types";
+import { jobs } from "../pages/jobs/utils/job.listing";
 
 export default function useCurrentJobSelection() {
   const [currentJob, setCurrentJob] = useState<Job>(jobs[0]);

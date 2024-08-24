@@ -1,5 +1,5 @@
 import React from "react";
-import { useJobListContext } from "../context/jobListContext.provider";
+import { useJobListContext } from "../../../Context/jobListContext.provider";
 import Filter from "./Filter/filter";
 import JobCard from "./jobCard";
 import DetailSection from "./detailSection";

@@ -2,8 +2,8 @@ import "../../styles/hero.css";
 import { useMediaQuery } from "react-responsive";
 import HamburgerMenu from "./hamburgerMenu";
 import logo from "../../pages/new logo.png";
-import { useAuthContext } from "../../pages/Auth/Context/AuthContextProvider";
-import {useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../Context/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
 import { routes } from "../Navigation/util/constants";
 
 export default function Hero() {

@@ -2,7 +2,7 @@ import React from "react";
 import { Notifications, Person } from "@mui/icons-material";
 import logo from "../../new logo.png";
 import "../utils/styles.css";
-import useAuth from "../../Auth/hooks/useAuth";
+import useAuth from "../../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../../components/Navigation/util/constants";
 

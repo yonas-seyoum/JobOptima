@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext } from "react";
-import { JobDetailContextType } from "../utils/types";
-import useCurrentJobSelection from "../hooks/useCurrentJobSelection";
+import { JobDetailContextType } from "../pages/jobs/utils/types";
+import useCurrentJobSelection from "../Hooks/useCurrentJobSelection";
 
 const JobDetailContext = createContext<JobDetailContextType | undefined>(
   undefined

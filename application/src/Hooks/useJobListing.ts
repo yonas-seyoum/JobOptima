@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
-import { ExperienceLevel, Filter, Industry, Job } from "../utils/types";
-import { jobs } from "../utils/job.listing";
+import {
+  ExperienceLevel,
+  Filter,
+  Industry,
+  Job,
+} from "../pages/jobs/utils/types";
+import { jobs } from "../pages/jobs/utils/job.listing";
 
 export default function useJobListing() {
   const [jobList, setJobList] = useState<Job[]>(jobs);

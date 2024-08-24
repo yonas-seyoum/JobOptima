@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useContext } from "react";
-import useAuth from "../hooks/useAuth";
+import useAuth from "../Hooks/useAuth";
 
 type AuthContextType = {
-  currentUser: any
+  currentUser: any;
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
