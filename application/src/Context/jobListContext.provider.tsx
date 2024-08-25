@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext } from "react";
-import { JobListContextType } from "../utils/types";
-import useJobListing from "../hooks/useJobListing";
+import { JobListContextType } from "../pages/jobs/utils/types";
+import useJobListing from "../Hooks/useJobListing";
 
 export const JobListContext = createContext<JobListContextType | undefined>(
   undefined

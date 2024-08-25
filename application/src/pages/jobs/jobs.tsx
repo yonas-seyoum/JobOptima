@@ -2,8 +2,8 @@ import React from "react";
 import Header from "./components/header";
 import SearchBar from "./components/searchBar";
 import MainContent from "./components/mainContent";
-import JobListContextProvider from "./context/jobListContext.provider";
-import JobDetailContextProvider from "./context/jobDetailContext.provider";
+import JobListContextProvider from "../../Context/jobListContext.provider";
+import JobDetailContextProvider from "../../Context/jobDetailContext.provider";
 import "./utils/styles.css";
 
 export default function Jobs() {

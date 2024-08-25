@@ -6,7 +6,7 @@ import {
   SliderContainer,
 } from "../../styled-components/styledComponents";
 import { Slider } from "@mui/material";
-import { useJobListContext } from "../../context/jobListContext.provider";
+import { useJobListContext } from "../../../../Context/jobListContext.provider";
 
 export default function SalaryRange() {
   const [openSection, setOpenSection] = useState<boolean>(false);
