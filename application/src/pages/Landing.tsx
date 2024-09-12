@@ -1,15 +1,16 @@
 
-import "../styles/landing.css";
-import Intro from "../components/intro/intro";
-import InfoSection from "../components/info-section/infoSection";
-import Footer from "../components/Footer/footer";
+import Hero from "../components/intro/hero";
+import { InfoSection } from "../components/info-section/infoSection";
+import ContactUs from "../components/ContactUs/contactUs";
+import { LandingProps } from "../util/types";
 
-export default function Landing() {
+export default function Landing({ refs }: LandingProps) {
+  const { homeRef, contactRef, aboutRef } = refs;
   return (
     <>
-      <Intro />
-      <InfoSection />
-      <Footer />
+      <Hero ref={homeRef} />
+      <ContactUs ref={aboutRef} />
+      <InfoSection ref={contactRef} />
     </>
   );
 }
