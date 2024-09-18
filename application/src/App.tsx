@@ -1,26 +1,32 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
+import Landing from "./pages/Landing/Landing";
 import Jobs from "./pages/jobs/jobs";
-import ContactUs from "./components/ContactUs/contactUs";
 import Profile from "./pages/Profile/profile";
 import Auth from "./pages/Auth/auth";
-import AboutUs from "./components/AboutUs/aboutUs";
+import Navigation from "./components/Navigation/navigation";
+import ThemeContextProvider from "./Context/ThemeContextProvider";
+import useScroll from "./Hooks/useScroll";
 import "./App.css";
 
 function App() {
+  const { homeRef, aboutRef, contactRef, scrollTo } = useScroll();
   return (
-    <div className="App">
-      <BrowserRouter basename="/">
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter basename="/">
+      <ThemeContextProvider>
+        <div className="App">
+          <Navigation scrollTo={scrollTo} />
+          <Routes>
+            <Route
+              path="/"
+              element={<Landing refs={{ homeRef, aboutRef, contactRef }} />}
+            />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </div>
+      </ThemeContextProvider>
+    </BrowserRouter>
   );
 }
 
