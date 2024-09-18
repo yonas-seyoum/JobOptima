@@ -30,6 +30,8 @@ export default function Navigation({ scrollTo }: NavigationProps) {
     navigate(profileRoute, { replace: true });
   };
 
+  console.log(handle);
+
   const [isOpen, setIsOpen] = useState(false);
   const handleHumbergerMenuClick = () => {
     setIsOpen(!isOpen);
@@ -73,7 +75,7 @@ export default function Navigation({ scrollTo }: NavigationProps) {
             paddingLeft: "10",
           }}
         >
-          <img src={logo} width="60" />
+          <img src={logo} alt="logo" width="60" />
         </Typography>
 
         <Box

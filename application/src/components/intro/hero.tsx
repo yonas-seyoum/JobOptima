@@ -9,8 +9,6 @@ import loo from "../../components/intro/ss-unsplash-removebg-pre.png";
 import { useThemeContext } from "../../Context/ThemeContextProvider";
 import { HeroProp } from "../../util/types";
 
-
-
 export default forwardRef<HTMLDivElement, HeroProp>(function Hero(prop, ref) {
   const isMobile = useMediaQuery({ maxWidth: "768px" });
   const { currentUser } = useAuthContext();
@@ -149,6 +147,7 @@ export default forwardRef<HTMLDivElement, HeroProp>(function Hero(prop, ref) {
                 backgroundColor: "#f8e71d",
               },
             }}
+            onClick={handleFindJobs}
           >
             <SearchIcon />
             <Typography sx={{ ml: 1 }}>Search</Typography>

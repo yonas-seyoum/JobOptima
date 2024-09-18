@@ -1,4 +1,4 @@
-import { CheckCircle, Info, Build, ThumbUp, Star } from "@mui/icons-material";
+import { CheckCircle, Info, Build, ThumbUp } from "@mui/icons-material";
 
 export const steps = [
   {

@@ -6,9 +6,8 @@ import { Button } from "@mui/material";
 export default function MobileMenu() {
   const { theme } = useThemeContext();
 
-  const { primary, secondary, tertiary } = theme;
-  const { homeRoute, jobsRoute, aboutUsRoute, contactUsRoute, profileRoute } =
-    routes;
+  const { secondary } = theme;
+  const { homeRoute, jobsRoute } = routes;
   return (
     <div
       style={{
