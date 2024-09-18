@@ -16,7 +16,7 @@ export default function InputField({
     if (multiline) {
       setNumberofRows(4);
     }
-  });
+  }, [multiline]);
 
   return (
     <TextField
