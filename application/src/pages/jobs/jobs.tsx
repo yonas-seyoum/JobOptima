@@ -1,10 +1,7 @@
-import React from "react";
-import Header from "./components/header";
-import SearchBar from "./components/searchBar";
 import MainContent from "./components/mainContent";
 import JobListContextProvider from "../../Context/jobListContext.provider";
 import JobDetailContextProvider from "../../Context/jobDetailContext.provider";
-import "./utils/styles.css";
+import SearchBar from "./components/searchBar";
 
 export default function Jobs() {
   return (
@@ -12,7 +9,6 @@ export default function Jobs() {
       <JobDetailContextProvider>
         <div className="job-app-container">
           <div className="job-app-wrapper">
-            <Header />
             <SearchBar />
             <MainContent />
           </div>
