@@ -7,7 +7,7 @@ import {
   FilterContent,
   FilterSection,
 } from "../../styled-components/styledComponents";
-import { useJobListContext } from "../../context/jobListContext.provider";
+import { useJobListContext } from "../../../../Context/jobListContext.provider";
 
 export default function ExperienceLevel() {
   const [openSection, setOpenSection] = useState<boolean>(false);
