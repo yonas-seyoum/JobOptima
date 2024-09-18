@@ -6,7 +6,6 @@ import {
   Chip,
   Container,
   Typography,
-  Grid,
   Divider,
   List,
   ListItem,
